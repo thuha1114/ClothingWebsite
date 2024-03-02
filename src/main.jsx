@@ -14,6 +14,7 @@ import { Kids } from './pages/Kid.jsx';
 import { ProviderContent } from './Provider/ProviderContent.jsx';
 import { BtnGoUp } from './Components/BtnGoUp/BtnGoUp.jsx';
 import { ProductDetail } from './pages/ProductDetail.jsx';
+import { Cart } from './pages/Cart.jsx';
 
 
 const router = createBrowserRouter([
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
   {
     path: "/detail/:id",
     element: <ProductDetail />,
+  },
+  {
+    path: "/cart",
+    element: <Cart />,
   }
 ]);
 

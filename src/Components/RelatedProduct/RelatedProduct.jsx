@@ -9,7 +9,6 @@ import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 
 export const RelatedProduct = () => {
     const {id} = useParams()
-    console.log(id)
 
     const product = useMemo(()=>{
         const result = all_product.filter(item => item.id == id)
@@ -18,9 +17,6 @@ export const RelatedProduct = () => {
 
     const category = product[0].category;
     const sub_category = product[0].sub_category;
-
-    console.log(category)
-    console.log(sub_category)
 
     const relatedPrducts = useMemo(() => {
         const result = all_product.filter(item => item.category == category && item.sub_category == sub_category)

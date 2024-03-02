@@ -12,6 +12,8 @@ export const Navbar = () => {
         {title:'Đồ trẻ em', path:'/kids'}
     ]
 
+    const cartList = JSON.parse(localStorage.getItem('cartList'))
+
 
     return (
         <>
@@ -36,7 +38,7 @@ export const Navbar = () => {
                     <i className="fa-solid fa-magnifying-glass cursor-pointer absolute left-2 top-2"></i>
                 </div>
                 <i className="fa-solid fa-cart-shopping mx-10 m-auto cursor-pointer relative hover:opacity-85">
-                    <span className='w-4 h-4 rounded-full bg-red-400 text-xs absolute bottom-3 left-2 text-center'>1</span>
+                    <span className='w-4 h-4 rounded-full bg-red-400 text-xs absolute bottom-3 left-2 text-center'>{cartList.length}</span>
                 </i>
                 <div className='mx-4 m-auto'>
                     <button className='border-2 border-sky-700 rounded-full w-28 h-10 mr-4 hover:bg-sky-500 hover:text-slate-50 hover:font-semibold'>Đăng nhập</button>

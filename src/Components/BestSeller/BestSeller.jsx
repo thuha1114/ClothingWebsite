@@ -12,8 +12,7 @@ export const BestSeller = () => {
         const best_seller = all_product.filter(item => item.status === 'best-seller')
         return best_seller
     }, [])
-
-    console.log(result)
+    
     return (
         <div className='mx-24 mb-20'>
             <h1 className='text-center uppercase text-3xl mb-10 font-rowdies border-b-4 border-red-400 w-1/3 mx-auto text-sky-700 pb-2'>Sản phẩm bán chạy</h1>

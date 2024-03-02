@@ -1,18 +1,42 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import all_product from '../Assets/all_product';
 
 export const ProductDetail_Info = () => {
+
     const {id} = useParams();
-    // const [product, setProduct] = useState({})
 
     const product = useMemo(()=>{
         const result = all_product.filter(item => item.id == id)
         return result
     },[id])
 
+
+    const [selectedProduct, setSelectedProduct] = useState()
+
+    const [cartList, setCartList] = useState(() => {
+        var storage = JSON.parse(localStorage.getItem('cartList'))
+        return storage ? storage : []
+    })
+
+    //sử dụng useEffect để SelectedProduct không bị undefined trong lần đầu tiên.
+    useEffect(() => {
+        setSelectedProduct(product)
+    },[product])
+    const addToCart = () => {
+
+        setCartList(prev => {
+            var cartList = [...prev, ...selectedProduct]
+            localStorage.setItem('cartList', JSON.stringify(cartList))
+            return cartList
+        })
+    }
+
+    const handleDelete = () => {
+        localStorage.removeItem('cartList')
+    }
     return (
         <div className='mt-36 mx-24 bg-white shadow-2xl flex'>
             <div className='rounded-lg overflow-hidden cursor-pointer flex-1 pt-10' >
@@ -39,9 +63,16 @@ export const ProductDetail_Info = () => {
                         <li className='border-2 h-11 pt-2 w-16 text-center align-middle font-bold rounded-lg text-white inline-block cursor-pointer hover:opacity-90 bg-cyan-600 '>L</li>
                         <li className='border-2 h-11 pt-2 w-16 text-center align-middle font-bold rounded-lg text-white inline-block cursor-pointer hover:opacity-90 bg-cyan-600 '>ML</li>
                     </ul>
-                    <div className='border-2 rounded-md h-11 w-96 text-center align-middle pt-2 cursor-pointer bg-cyan-600 text-white font-semibold hover:opacity-90'>Thêm vào giỏ hàng</div>
+                    <Link to='/cart'>
+                        <button 
+                            className='border-2 rounded-md h-11 w-96 text-center align-middle pt-2 cursor-pointer bg-cyan-600 text-white font-semibold hover:opacity-90' 
+                            onClick={() => addToCart()}
+                            >
+                        Thêm vào giỏ hàng</button>
+                    </Link>
                     <h1 className='text-xl py-5 font-semibold'>Mô tả sản phẩm</h1>
                     <h1 className=''>{product[0].description}</h1>
+                    <h1 className='text-xl py-5 font-semibold' onClick={() => handleDelete()}>Xóa</h1>
                 </div>
             </div>
         </div>
