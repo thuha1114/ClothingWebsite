@@ -1,6 +1,6 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 import { Carousel } from 'react-responsive-carousel'
-import { Link } from 'react-router-dom'
+import { json, Link } from 'react-router-dom'
 import logo from '/images/logo.png'
 
 
@@ -12,12 +12,15 @@ export const Navbar = () => {
         {title:'Đồ trẻ em', path:'/kids'}
     ]
 
-    const cartList = JSON.parse(localStorage.getItem('cartList'))
+    const [cartList, setCartList] = useState(() => {
+        var storage = JSON.parse(localStorage.getItem('cartList'))
+        return storage ? storage : []
+    })
 
 
     return (
         <>
-            <header className='flex px-32 text-blue-900 fixed top-0 mb-96 ht-32 bg-white z-10 w-full font-semibold bg-blue-200/90'>
+            <header className='flex px-32 text-blue-900 fixed top-0 mb-96 ht-32 bg-blue-200/90 z-10 w-full font-semibold '>
                     
                 <Link to="/">
                     <img src={logo} alt='Logo for Website' className='size-32 flex-none cursor-pointer'/>
@@ -37,9 +40,11 @@ export const Navbar = () => {
                     />
                     <i className="fa-solid fa-magnifying-glass cursor-pointer absolute left-2 top-2"></i>
                 </div>
-                <i className="fa-solid fa-cart-shopping mx-10 m-auto cursor-pointer relative hover:opacity-85">
-                    <span className='w-4 h-4 rounded-full bg-red-400 text-xs absolute bottom-3 left-2 text-center'>{cartList.length}</span>
-                </i>
+                <Link to="/cart" className=' mx-10 m-auto cursor-pointer relative hover:opacity-85'>
+                    <i className="fa-solid fa-cart-shopping">
+                        <span className='w-4 h-4 rounded-full bg-red-400 text-xs absolute bottom-3 left-2 text-center'>{cartList.length}</span>
+                    </i>
+                </Link>
                 <div className='mx-4 m-auto'>
                     <button className='border-2 border-sky-700 rounded-full w-28 h-10 mr-4 hover:bg-sky-500 hover:text-slate-50 hover:font-semibold'>Đăng nhập</button>
                     <button className='border-2 border-sky-700 rounded-full w-28 h-10 hover:bg-sky-500 hover:text-slate-50 hover:font-semibold'>Đăng ký</button>

@@ -25,6 +25,7 @@ export const ProductDetail_Info = () => {
     useEffect(() => {
         setSelectedProduct(product)
     },[product])
+    
     const addToCart = () => {
 
         setCartList(prev => {
@@ -34,9 +35,6 @@ export const ProductDetail_Info = () => {
         })
     }
 
-    const handleDelete = () => {
-        localStorage.removeItem('cartList')
-    }
     return (
         <div className='mt-36 mx-24 bg-white shadow-2xl flex'>
             <div className='rounded-lg overflow-hidden cursor-pointer flex-1 pt-10' >
@@ -72,7 +70,6 @@ export const ProductDetail_Info = () => {
                     </Link>
                     <h1 className='text-xl py-5 font-semibold'>Mô tả sản phẩm</h1>
                     <h1 className=''>{product[0].description}</h1>
-                    <h1 className='text-xl py-5 font-semibold' onClick={() => handleDelete()}>Xóa</h1>
                 </div>
             </div>
         </div>
