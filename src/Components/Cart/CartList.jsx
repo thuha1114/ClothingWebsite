@@ -30,7 +30,7 @@ export const CartList = () => {
     },[itemDelete])
   return (
     //border radius table
-    <table className='table-fixed mt-40 mb-20 mx-auto rounded-t-lg rounded-b-2xl relative overflow-hidden'>
+    <table className='table-fixed mt-16 mb-20 mx-auto rounded-t-lg rounded-b-2xl relative overflow-hidden'>
       <thead className='bg-amber-200 h-12 text-slate-900 text-lg'>
         <tr>
           <th></th>
