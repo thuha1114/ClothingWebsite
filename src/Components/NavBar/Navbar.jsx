@@ -17,6 +17,9 @@ export const Navbar = () => {
         return storage ? storage : []
     })
 
+    const handleToTop = () => {
+        window.scrollTo({top: '0', behavior:'smooth'})
+    }
 
     return (
         <>
@@ -28,7 +31,7 @@ export const Navbar = () => {
                 <ul className='flex justify-between flex-1 mx-20 m-auto w-28'>
                     {navItems.map(({title, path, category}) =>(
                         <li key={title} className="hover:border-b-4 hover:border-red-400 transition ease-in-out duration-300 hover:font-bold" >
-                            <Link to={path}>{title}</Link>
+                            <Link to={path} onClick={handleToTop}>{title}</Link>
                         </li>
                     ))}
                 </ul>

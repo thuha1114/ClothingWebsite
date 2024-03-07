@@ -75,6 +75,10 @@ export const WomensProducts = () => {
       setMessage(false)
     }
   },[category])
+
+  const handleToTop = () => {
+    window.scrollTo({top: '0', behavior:'smooth'})
+  }
   return (
     <>
       <div className='grid'>
@@ -108,7 +112,7 @@ export const WomensProducts = () => {
           {products.map(product =>(
             <div key={product.id} className='group relative bg-white shadow-2xl rounded-lg overflow-hidden cursor-pointer hover:scale-105 hover:opacity-75 transition ease-in-out duration-200'>
               <div className="">
-                <Link to={`/detail/${product.id}`} >
+                <Link to={`/detail/${product.id}`} onClick = {handleToTop}>
                   <img src={product.image[0]}/>
                   <div className='mx-4 my-2 font-semibold'>{product.name}</div>
                   <div className='flex justify-between px-4 pb-4 text-lg'>

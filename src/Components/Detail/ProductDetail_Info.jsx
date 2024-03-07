@@ -3,6 +3,7 @@ import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Link, useParams } from 'react-router-dom'
 import all_product from '../Assets/all_product';
+import { CartList } from '../Cart/CartList';
 
 export const ProductDetail_Info = () => {
 
@@ -28,12 +29,14 @@ export const ProductDetail_Info = () => {
     
     const addToCart = () => {
 
-        setCartList(prev => {
-            var cartList = [...prev, ...selectedProduct]
-            localStorage.setItem('cartList', JSON.stringify(cartList))
-            return cartList
+        setCartList(prevCartList => {
+            const selected = {...product[0],quantity: 1}
+            var update = [...prevCartList, selected]
+            localStorage.setItem('cartList', JSON.stringify(update))
+            return update
         })
     }
+
 
     return (
         <div className='mt-36 mx-24 bg-white shadow-2xl flex'>
