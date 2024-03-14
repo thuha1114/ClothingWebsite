@@ -1,11 +1,18 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { Link } from 'react-router-dom'
-import new_collection from '../Assets/new_collections'
+import all_product from '../Assets/all_product'
 export const NewCollection = () => {
 
   const handleToTop = () => {
     window.scrollTo({top: '0', behavior:'smooth'})
   }
+
+  const new_collection = useMemo(()=>{
+    const result = all_product.filter(item => item.status === 'new-collection')
+    return result
+  })
+
+  console.log(new_collection)
 
   return (
     <>
@@ -15,8 +22,8 @@ export const NewCollection = () => {
               <Link to={`/detail/${item.id}`} key={item.id} onClick={handleToTop}>
                   <div  className='group relative bg-white shadow-2xl rounded-lg overflow-hidden cursor-pointer hover:scale-105 hover:opacity-75 transition ease-in-out duration-200'>
                   <div className="">
-                    <img src={item.image} className='w-full h-80'/>
-                    <div className='mx-4 my-2 font-semibold'>{item.name}</div>
+                    <img src={item.image[0]} className='w-full h-80'/>
+                    <div className='mx-4 my-2 font-semibold truncate'>{item.name}</div>
                     <div className='flex justify-between px-4 pb-4 text-lg'>
                         <h4 className='font-bold line-through'>{item.old_price}</h4>
                         <h4 className='font-bold text-red-500'>{item.new_price}</h4>

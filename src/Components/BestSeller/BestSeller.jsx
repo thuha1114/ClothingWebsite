@@ -41,8 +41,8 @@ export const BestSeller = () => {
                         <Link to={`/detail/${product.id}`} onClick={handleToTop}>
                             <div className='group relative bg-white shadow-2xl rounded-lg overflow-hidden cursor-pointer hover:scale-105 hover:opacity-75 transition ease-in-out duration-200 h-[400px]'>
                                 <div>
-                                    <img src={product.image[0]} className=' w-full h-[330px] '/>
-                                    <div className='mx-4 my-2 font-semibold '>{product.name}</div>
+                                    <img src={product.image[0]} className=' w-full h-[350px] '/>
+                                    <div className='mx-4 my-2 font-semibold truncate'>{product.name}</div>
                                 </div>
                                 <i className="fa-solid fa-eye absolute top-32 left-1/2 text-3xl hidden group-hover:block cursor-pointer text-slate-800"></i>
                             </div>

@@ -25,7 +25,7 @@ export const BtnGoUp = () => {
         <>
             {showBtn && (
                 <i 
-                    className="fa-solid fa-arrow-up fixed bottom-10 right-10  cursor-pointer text-2xl hover:opacity-85 text-slate-700"
+                    className="fa-solid fa-arrow-up fixed bottom-10 left-10  cursor-pointer text-2xl hover:opacity-85 text-slate-700"
                     onClick = {handleScrollToTop}
                 ></i>
             )}

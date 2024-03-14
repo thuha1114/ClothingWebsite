@@ -15,6 +15,8 @@ import { ProviderContent } from './Provider/ProviderContent.jsx';
 import { BtnGoUp } from './Components/BtnGoUp/BtnGoUp.jsx';
 import { ProductDetail } from './pages/ProductDetail.jsx';
 import { Cart } from './pages/Cart.jsx';
+import { Payment } from './pages/Payment.jsx';
+import { Confirm } from './pages/Confirm.jsx';
 
 
 const router = createBrowserRouter([
@@ -41,6 +43,14 @@ const router = createBrowserRouter([
   {
     path: "/cart",
     element: <Cart />,
+  },
+  {
+    path: "/payment",
+    element: <Payment />,
+  },
+  {
+    path: "/confirm",
+    element: <Confirm />,
   }
 ]);
 

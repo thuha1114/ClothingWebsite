@@ -1,14 +1,14 @@
 import React, { useContext, useEffect, useMemo, useState } from 'react'
 import { ValueContext } from '../../Provider/ProviderContent'
 
-export const Follow_Products_Women = () => {
+export const Follow_Products_Kids = () => {
 
     const all_products = useContext(ValueContext)
   
 
     const list = useMemo(()=>{
         const random = Math.floor(Math.random() * 6)
-        const results = all_products.filter(item => item.category === 'women').slice(random,random + 4)
+        const results = all_products.filter(item => item.category === 'kid').slice(random,random + 4)
         return results
     },[])
 
@@ -29,7 +29,7 @@ export const Follow_Products_Women = () => {
           <div className='text-center text-3xl my-16 font-bold font-rowdies text-cyan-700'>Theo dõi các sản phẩm trên trang Instagram của chúng tôi!</div>
           <div className='grid grid-cols-4 gap-8 mx-32'>
             {list.map(item => (
-              <a href='https://www.instagram.com/piecesofficial/' key= {item.id}>
+              <a href='https://www.instagram.com/alexandalexacom' key= {item.id}>
                 <div className='cursor-pointer bg-white py-4 border-2 rounded-md shadow-xl hover:scale-110 hover:opacity-85 transition ease-in-out duration-300'>
                   <img src={item.image[0]} alt="" className='w-3/4 mx-auto'/>
                 </div>

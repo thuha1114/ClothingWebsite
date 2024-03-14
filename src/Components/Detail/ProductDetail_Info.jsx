@@ -17,6 +17,10 @@ export const ProductDetail_Info = () => {
 
     const [selectedProduct, setSelectedProduct] = useState()
 
+    const sizes = ['XS', 'S', 'M', 'L', 'XL']
+
+    const [selectedSize, setSelectedSize] = useState('')
+
     const [cartList, setCartList] = useState(() => {
         var storage = JSON.parse(localStorage.getItem('cartList'))
         return storage ? storage : []
@@ -30,7 +34,7 @@ export const ProductDetail_Info = () => {
     const addToCart = () => {
 
         setCartList(prevCartList => {
-            const selected = {...product[0],quantity: 1}
+            const selected = {...product[0],quantity: 1, size: selectedSize, total: product[0].new_price}
             var update = [...prevCartList, selected]
             localStorage.setItem('cartList', JSON.stringify(update))
             return update
@@ -58,21 +62,25 @@ export const ProductDetail_Info = () => {
                 <div>
                     <h1 className='text-xl font-semibold'>Kích thước sản phẩm</h1>
                     <ul className='flex gap-4 py-5'> 
-                        <li className='border-2 h-11 pt-2 w-16 text-center align-middle font-bold rounded-lg text-white inline-block cursor-pointer hover:opacity-90 bg-cyan-600 '>XS</li>
-                        <li className='border-2 h-11 pt-2 w-16 text-center align-middle font-bold rounded-lg text-white inline-block cursor-pointer hover:opacity-90 bg-cyan-600 '>S</li>
-                        <li className='border-2 h-11 pt-2 w-16 text-center align-middle font-bold rounded-lg text-white inline-block cursor-pointer hover:opacity-90 bg-cyan-600 '>M</li>
-                        <li className='border-2 h-11 pt-2 w-16 text-center align-middle font-bold rounded-lg text-white inline-block cursor-pointer hover:opacity-90 bg-cyan-600 '>L</li>
-                        <li className='border-2 h-11 pt-2 w-16 text-center align-middle font-bold rounded-lg text-white inline-block cursor-pointer hover:opacity-90 bg-cyan-600 '>ML</li>
+                        {sizes.map( (size, index) => (
+                            <li key={index} 
+                                //Đổi màu khi click chọn size
+                                className={`border-2 h-11 pt-2 w-16 text-center align-middle font-bold rounded-lg inline-block cursor-pointer hover:opacity-90 ${selectedSize === size ? 'bg-cyan-500 text-white' : ''}`}  
+                                onClick={() => setSelectedSize(size)}
+                                
+                            >{size}</li>
+                        
+                        ))}
                     </ul>
                     <Link to='/cart'>
                         <button 
-                            className='border-2 rounded-md h-11 w-96 text-center align-middle pt-2 cursor-pointer bg-cyan-600 text-white font-semibold hover:opacity-90' 
+                            className='border-2 rounded-md h-11 w-96 text-center align-middle pt-1 cursor-pointer bg-cyan-600 text-white font-semibold hover:opacity-90' 
                             onClick={() => addToCart()}
                             >
                         Thêm vào giỏ hàng</button>
                     </Link>
                     <h1 className='text-xl py-5 font-semibold'>Mô tả sản phẩm</h1>
-                    <h1 className=''>{product[0].description}</h1>
+                    <h1 className='text-justify mr-16 leading-7'>{product[0].description}</h1>
                 </div>
             </div>
         </div>

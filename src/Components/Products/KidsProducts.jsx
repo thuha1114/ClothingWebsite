@@ -70,6 +70,36 @@ export const KidsProducts = () => {
         setMessage(false)
       }
     }
+    else if (category === 'sweater'){
+      const sorted = list.filter(item => item.sub_category === 'sweater')
+      setProducts(sorted)
+      if(sorted.length === 0){
+        setMessage('Rất tiếc, không tìm thấy sản phẩm!')
+      }
+      else{
+        setMessage(false)
+      }
+    }
+    else if (category === 'pajamas'){
+      const sorted = list.filter(item => item.sub_category === 'pajamas')
+      setProducts(sorted)
+      if(sorted.length === 0){
+        setMessage('Rất tiếc, không tìm thấy sản phẩm!')
+      }
+      else{
+        setMessage(false)
+      }
+    }
+    else if (category === 't-shirt'){
+      const sorted = list.filter(item => item.sub_category === 't-shirt')
+      setProducts(sorted)
+      if(sorted.length === 0){
+        setMessage('Rất tiếc, không tìm thấy sản phẩm!')
+      }
+      else{
+        setMessage(false)
+      }
+    }
     else if (category === 'all'){
       setProducts(list)
       setMessage(false)
@@ -85,13 +115,16 @@ export const KidsProducts = () => {
         <h1 className='text-center uppercase text-3xl mb-10 font-rowdies border-b-4 border-red-400 w-1/4 mx-auto text-sky-700 pt-16'>Tất cả sản phẩm</h1> 
         <div className='flex justify-between text-blue-900'>
           {/* Lọc theo danh mục */}
-          <div className='w-96 ml-36 border-slate-400 my-auto'>
+          <div className='ml-36 border-slate-400 my-auto'>
             <ul className='flex justify-between flex-1 mx-5 '>
-              <li className="hover:border-b-4 hover:border-red-400 transition ease-in-out duration-300 hover:font-bold  font-semibold cursor-pointer " onClick={() => setCategory('all')}>Tất cả</li>
-              <li className="hover:border-b-4 hover:border-red-400 transition ease-in-out duration-300 hover:font-bold  font-semibold cursor-pointer" onClick={() => setCategory('pants')}>Quần</li>
-              <li className="hover:border-b-4 hover:border-red-400 transition ease-in-out duration-300 hover:font-bold  font-semibold cursor-pointer" onClick={() => setCategory('shirt')}>Áo</li>
-              <li className="hover:border-b-4 hover:border-red-400 transition ease-in-out duration-300 hover:font-bold  font-semibold cursor-pointer" onClick={() => setCategory('skirt')}>Váy</li>
-              <li className="hover:border-b-4 hover:border-red-400 transition ease-in-out duration-300 hover:font-bold  font-semibold cursor-pointer" onClick={() => setCategory('jacket')}>Áo khoác</li>
+              <li className="hover:border-b-4 mx-5 hover:border-red-400 transition ease-in-out duration-300 hover:font-bold  font-semibold cursor-pointer " onClick={() => setCategory('all')}>Tất cả</li>
+              <li className="hover:border-b-4 mx-5 hover:border-red-400 transition ease-in-out duration-300 hover:font-bold  font-semibold cursor-pointer" onClick={() => setCategory('pants')}>Quần</li>
+              <li className="hover:border-b-4 mx-5 hover:border-red-400 transition ease-in-out duration-300 hover:font-bold  font-semibold cursor-pointer" onClick={() => setCategory('sweater')}>Sweater</li>
+              <li className="hover:border-b-4 mx-5 hover:border-red-400 transition ease-in-out duration-300 hover:font-bold  font-semibold cursor-pointer" onClick={() => setCategory('jacket')}>Áo khoác</li>
+              <li className="hover:border-b-4 mx-5 hover:border-red-400 transition ease-in-out duration-300 hover:font-bold  font-semibold cursor-pointer" onClick={() => setCategory('pajamas')}>Đồ ngủ</li>
+              <li className="hover:border-b-4 mx-5 hover:border-red-400 transition ease-in-out duration-300 hover:font-bold  font-semibold cursor-pointer" onClick={() => setCategory('shirt')}>Áo sơ mi</li>
+              <li className="hover:border-b-4 mx-5 hover:border-red-400 transition ease-in-out duration-300 hover:font-bold  font-semibold cursor-pointer" onClick={() => setCategory('skirt')}>Váy</li>
+              <li className="hover:border-b-4 mx-5 hover:border-red-400 transition ease-in-out duration-300 hover:font-bold  font-semibold cursor-pointer" onClick={() => setCategory('t-shirt')}>Áo thun</li>
             </ul>
           </div>
           {/* Lọc theo giá */}
@@ -114,7 +147,7 @@ export const KidsProducts = () => {
               <div className="">
                 <Link to={`/detail/${product.id}`} onClick={handleToTop} >
                   <img src={product.image[0]}/>
-                  <div className='mx-4 my-2 font-semibold'>{product.name}</div>
+                  <div className='mx-4 my-2 font-semibold truncate'>{product.name}</div>
                   <div className='flex justify-between px-4 pb-4 text-lg'>
                       <h4 className='font-bold line-through'>{product.old_price}</h4>
                       <h4 className='font-bold text-red-500'>{product.new_price}</h4>
