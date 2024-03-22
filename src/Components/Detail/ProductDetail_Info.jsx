@@ -1,9 +1,11 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import { Link, useParams } from 'react-router-dom'
+import { Link, useParams, useNavigate } from 'react-router-dom'
 import all_product from '../Assets/all_product';
 import { CartList } from '../Cart/CartList';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const ProductDetail_Info = () => {
 
@@ -30,15 +32,50 @@ export const ProductDetail_Info = () => {
     useEffect(() => {
         setSelectedProduct(product)
     },[product])
+
+    const [ currentAcc, setCurrentAcc] = useState(()=>{
+        const currentAcc = JSON.parse(localStorage.getItem('currentAcc'))
+        return currentAcc ? currentAcc : false
+    })
+    
+    const [isAcc, setIsAcc] = useState(()=>{
+        return currentAcc ? true : false
+    })
+
+    const [disabled, setDisable] = useState(false)
+
+    const navigate = useNavigate()
+
+    const notify = () => {
+        toast.error('Phải đăng nhập để tiếp tục mua hàng', {
+            position: 'top-right',
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+    };
     
     const addToCart = () => {
 
-        setCartList(prevCartList => {
-            const selected = {...product[0],quantity: 1, size: selectedSize, total: product[0].new_price}
-            var update = [...prevCartList, selected]
-            localStorage.setItem('cartList', JSON.stringify(update))
-            return update
-        })
+        if(isAcc){
+            setCartList(prevCartList => {
+                const selected = {...product[0],quantity: 1, size: selectedSize, total: product[0].new_price}
+                var update = [...prevCartList, selected]
+                localStorage.setItem('cartList', JSON.stringify(update))
+                return update
+            })
+            navigate('/cart')
+        }
+        else{
+            setDisable(true)
+            notify()
+            setTimeout(() => {
+                setDisable(false); // Reset disabled after 3 seconds
+            }, 3000);
+        } 
     }
 
 
@@ -72,13 +109,13 @@ export const ProductDetail_Info = () => {
                         
                         ))}
                     </ul>
-                    <Link to='/cart'>
-                        <button 
-                            className='border-2 rounded-md h-11 w-96 text-center align-middle pt-1 cursor-pointer bg-cyan-600 text-white font-semibold hover:opacity-90' 
-                            onClick={() => addToCart()}
-                            >
-                        Thêm vào giỏ hàng</button>
-                    </Link>
+                    <button 
+                        className='border-2 rounded-md h-11 w-96 text-center align-middle pt-1 cursor-pointer bg-cyan-600 text-white font-semibold hover:opacity-90' 
+                        onClick={() => addToCart()}
+                        disabled={disabled}
+                        >
+                    Thêm vào giỏ hàng</button>
+                    <ToastContainer />
                     <h1 className='text-xl py-5 font-semibold'>Mô tả sản phẩm</h1>
                     <h1 className='text-justify mr-16 leading-7'>{product[0].description}</h1>
                 </div>

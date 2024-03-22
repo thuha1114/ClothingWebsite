@@ -60,12 +60,19 @@ export const CartList = () => {
       }
     }, [itemDelete]);
 
+    const [currentAcc, setCurrentAcc] = useState(()=>{
+      const acc = JSON.parse(localStorage.getItem('currentAcc'))
+      return acc ? true : false
+    })
+
+    console.log('isAcc: ', currentAcc)
+
     useEffect(()=> {
       if(cartList.length > 0)
         setShowCart(true)
-      else if(cartList.length == 0)
+      else if(!currentAcc || cartList.length == 0)
         setShowCart(false)
-    },[cartList])
+    },[cartList, currentAcc])
 
     const [selectedProducts, setSelectedProducts] = useState(false)
 

@@ -17,6 +17,9 @@ import { ProductDetail } from './pages/ProductDetail.jsx';
 import { Cart } from './pages/Cart.jsx';
 import { Payment } from './pages/Payment.jsx';
 import { Confirm } from './pages/Confirm.jsx';
+import { Login } from './pages/Login.jsx';
+import { ForgetPass } from './pages/ForgetPass.jsx';
+import {SignUp} from './pages/SignUp.jsx';
 
 
 const router = createBrowserRouter([
@@ -51,6 +54,18 @@ const router = createBrowserRouter([
   {
     path: "/confirm",
     element: <Confirm />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/signup",
+    element: <SignUp />,
+  },
+  {
+    path: "/forget-pass",
+    element: <ForgetPass/>,
   }
 ]);
 

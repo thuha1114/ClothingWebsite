@@ -112,7 +112,6 @@ let all_product = [
     id: 1,
     name: "Áo blouse cài nút",
     category: "women",
-    // image: p1_img,
     image: [p1_img, p1_1_img, p1_2_img],
     new_price: 64.4,
     old_price: 80.5,

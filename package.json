@@ -13,15 +13,19 @@
     "body-parser": "^1.20.2",
     "dialogflow": "^1.2.0",
     "express": "^4.18.3",
+    "file-saver": "^2.0.5",
+    "formik": "^2.4.5",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.21.3",
+    "react-toastify": "^10.0.5",
     "sort-by": "^1.2.0",
     "swiper": "^11.0.7",
-    "uuid": "^9.0.1"
+    "uuid": "^9.0.1",
+    "yup": "^1.4.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",

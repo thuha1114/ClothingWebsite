@@ -11,6 +11,9 @@ export default {
         'rowdies': ['Rowdies', 'sans-serif'],
         'gowun': ['Gowun Dodum', 'sans-serif']
       },
+      boxShadow:{
+        'custom-shadow': ' 4px 6px 10px  0 rgba(30, 74, 188, 0.5)'
+      }
     },
   },
   plugins: [],
