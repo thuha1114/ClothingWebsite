@@ -20,8 +20,7 @@ import { Confirm } from './pages/Confirm.jsx';
 import { Login } from './pages/Login.jsx';
 import { ForgetPass } from './pages/ForgetPass.jsx';
 import {SignUp} from './pages/SignUp.jsx';
-
-
+import {Admin} from './pages/Admin.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -66,7 +65,13 @@ const router = createBrowserRouter([
   {
     path: "/forget-pass",
     element: <ForgetPass/>,
+  },
+  {
+    path: "/admin",
+    element: <Admin />,
   }
+  
+  
 ]);
 
 
