@@ -79,6 +79,15 @@ let users = [
     "fullname": "Ha Nguyen",
     "phone_number": "0965820121",
     "address": "273 An Duong Vuong, Ward 3, District 5"
+  },
+  {
+    "id": 174,
+    "username": "user1",
+    "password": "123456789",
+    "role": "user",
+    "fullname": "Ha Nguyen",
+    "phone_number": "0965820121",
+    "address": "273 An Duong Vuong, Ward 3, District 5"
   }
 ];
 

@@ -18,10 +18,19 @@ export const SignUp = () => {
     };
 
     const saveUsersToFile = (usersData) => {
+        // const usersFilePath = 'D:\\DACN\\Project\\ecommerce-project\\src\\Components\\Assets\\user.js';
         const data = `let users = ${JSON.stringify(usersData, null, 2)};\n\nexport { users };`;
         const blob = new Blob([data], { type: 'text/javascript;charset=utf-8' });
-        saveAs(blob, 'user.js');
+        const usersFile = new File([blob], "user.js", { type: 'text/javascript;charset=utf-8' });
+    
+        saveAs(usersFile);
     };
+
+    // const saveUsersToFile = (usersData) => {
+    //     const data = `let users = ${JSON.stringify(usersData, null, 2)};\n\nexport { users };`;
+    //     const blob = new Blob([data], { type: 'text/javascript;charset=utf-8' });
+    //     saveAs(blob, 'user.js');
+    // };
 
     const navigate = useNavigate()
 
@@ -98,13 +107,13 @@ export const SignUp = () => {
                             {/* Số điện thoại */}
                             <div className="border-2 rounded-lg mx-24 h-10 mt-5 border-blue-200">
                                 <i className="text-cyan-800 fa-solid fa-phone w-10 h-full text-xl pt-1 text-center my-auto border-r-2 border-blue-200 opacity-70 align-middle"></i>
-                                <Field type="text" name="phoneNumber" placeholder="Nhập họ tên ..." className='outline-none pl-5 text-blue-400 font-semibold' />
+                                <Field type="text" name="phoneNumber" placeholder="Nhập số điện thoại ..." className='outline-none pl-5 text-blue-400 font-semibold' />
                                 <ErrorMessage name="phoneNumber" component="div" className="text-red-500" />
                             </div>
                             {/* Địa chỉ */}
                             <div className="border-2 rounded-lg mx-24 h-10 mt-5 border-blue-200">
                                 <i className="text-cyan-800 fa-solid fa-location-dot w-10 h-full text-xl pt-1 text-center my-auto border-r-2 border-blue-200 opacity-70 align-middle"></i>
-                                <Field type="text" name="address" placeholder="Nhập họ tên ..." className='outline-none pl-5 text-blue-400 font-semibold' />
+                                <Field type="text" name="address" placeholder="Nhập địa chỉ ..." className='outline-none pl-5 text-blue-400 font-semibold' />
                                 <ErrorMessage name="address" component="div" className="text-red-500" />
                             </div>
                             {/* Nút Đăng ký */}

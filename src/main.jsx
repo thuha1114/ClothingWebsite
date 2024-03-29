@@ -66,7 +66,7 @@ const router = createBrowserRouter([
   {
     path: "/forget-pass",
     element: <ForgetPass/>,
-  }
+  },
 ]);
 
 
