@@ -55,19 +55,38 @@ export const ProductDetail_Info = () => {
             pauseOnHover: true,
             draggable: true,
             progress: undefined,
+            toastId: 'notify',
+        });
+    };
+
+    const notifySize = () => {
+        toast.error('Phải chọn size trước khi mua hàng', {
+            position: 'top-right',
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            toastId: 'notifySize',
         });
     };
     
     const addToCart = () => {
 
         if(isAcc){
-            setCartList(prevCartList => {
-                const selected = {...product[0],quantity: 1, size: selectedSize, total: product[0].new_price}
-                var update = [...prevCartList, selected]
-                localStorage.setItem('cartList', JSON.stringify(update))
-                return update
-            })
-            navigate('/cart')
+            if(selectedSize){
+                setCartList(prevCartList => {
+                    const selected = {...product[0],quantity: 1, size: selectedSize, total: product[0].new_price}
+                    var update = [...prevCartList, selected]
+                    localStorage.setItem('cartList', JSON.stringify(update))
+                    return update
+                })
+                navigate('/cart')
+            }
+            else{
+                notifySize()
+            }
         }
         else{
             setDisable(true)
@@ -92,7 +111,7 @@ export const ProductDetail_Info = () => {
             </div>
             <div className='flex-1 mx-4'>
                 <div className=' my-2 font-semibold text-xl'>{product[0].name}</div>
-                <div className='flex justify-between px-4 pb-4 text-lg w-36'>
+                <div className='flex justify-between px-4 pb-4 text-lg w-52'>
                     <h4 className='font-bold line-through'>{product[0].old_price}</h4>
                     <h4 className='font-bold text-red-500'>{product[0].new_price}</h4>
                 </div>
@@ -115,7 +134,8 @@ export const ProductDetail_Info = () => {
                         disabled={disabled}
                         >
                     Thêm vào giỏ hàng</button>
-                    <ToastContainer />
+                    <ToastContainer toastId='notify' />
+                    <ToastContainer toastId='notifySize'  />
                     <h1 className='text-xl py-5 font-semibold'>Mô tả sản phẩm</h1>
                     <h1 className='text-justify mr-16 leading-7'>{product[0].description}</h1>
                 </div>

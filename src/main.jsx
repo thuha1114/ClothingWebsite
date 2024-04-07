@@ -21,6 +21,8 @@ import { Login } from './pages/Login.jsx';
 import { ForgetPass } from './pages/ForgetPass.jsx';
 import {SignUp} from './pages/SignUp.jsx';
 import {Admin} from './pages/Admin.jsx';
+import { History } from './pages/history.jsx';
+import { SanPham } from './pages/SanPham.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -69,6 +71,14 @@ const router = createBrowserRouter([
   {
     path: "/admin",
     element: <Admin />,
+  },
+  {
+    path: "/history",
+    element: <History />,
+  },
+  {
+    path: "/sanpham",
+    element: <SanPham />,
   }
 ]);
 

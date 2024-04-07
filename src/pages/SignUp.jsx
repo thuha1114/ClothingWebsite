@@ -26,12 +26,6 @@ export const SignUp = () => {
         saveAs(usersFile);
     };
 
-    // const saveUsersToFile = (usersData) => {
-    //     const data = `let users = ${JSON.stringify(usersData, null, 2)};\n\nexport { users };`;
-    //     const blob = new Blob([data], { type: 'text/javascript;charset=utf-8' });
-    //     saveAs(blob, 'user.js');
-    // };
-
     const navigate = useNavigate()
 
     return (

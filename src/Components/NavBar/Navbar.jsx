@@ -29,8 +29,6 @@ export const Navbar = () => {
         return currentAcc ? currentAcc : false
     })
 
-    console.log(currentAcc)
-
     const [isAcc, setIsAcc] = useState(()=>{
         return currentAcc ? true : false
     })
@@ -128,8 +126,6 @@ export const Navbar = () => {
                         ))}
                     </div>
                 </div>
-                
-                {/* <Link to="/cart" className=' mx-10 m-auto cursor-pointer relative hover:opacity-85'> */}
                 <div 
                     className=' mx-10 m-auto cursor-pointer relative hover:opacity-85'
                     onClick={handleCart}>
@@ -144,8 +140,13 @@ export const Navbar = () => {
                         <i className="fa-solid fa-circle-user text-2xl mx-3 text-blue-700"></i>
                         <h1 className='text-lg group relative cursor-pointer'>{currentAcc.username}
                             <ul className='text-base absolute w-40 bg-white rounded-lg shadow-custom-shadow hidden group-hover:block'>
-                                <li className='py-1 border-b-2 pl-3 cursor-pointer hover:font-bold'>Tài khoản cá nhân</li>
-                                <li className='py-1 border-b-2 pl-3 cursor-pointer hover:font-bold'>Lịch sử đơn hàng</li>
+                                <Link to='/sanpham'>
+                                    <li className='py-1 border-b-2 pl-3 cursor-pointer hover:font-bold'>Tài khoản cá nhân</li>
+
+                                </Link>
+                                <Link to='/history'>
+                                    <li className='py-1 border-b-2 pl-3 cursor-pointer hover:font-bold'>Lịch sử đơn hàng</li>
+                                </Link>
                                 <li 
                                     className='py-1 pl-3 cursor-pointer hover:font-bold'
                                     onClick={handleLogOut}>Đăng xuất</li>
