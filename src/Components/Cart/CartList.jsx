@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
+// import { InfoClient } from '../InfoClient/InfoClient'
 import empty_cart from "/images/empty_cart.png"
 
 export const CartList = () => {
@@ -18,6 +19,11 @@ export const CartList = () => {
     return result
   },[cartList])
 
+  const formattedNum = useMemo(()=>{
+    const formattedNum = total.toLocaleString('en-US')
+    return formattedNum
+  },[total])
+
 
   const handleDecrease = (itemId) => {
     setCartList(prevCartList => {
@@ -25,6 +31,7 @@ export const CartList = () => {
         if(item.id === itemId && item.quantity > 1){
           const quantity = item.quantity - 1
           const total = item.new_price * quantity
+          // const formattedNum = total.toLocaleString('en-US')
           return {...item, quantity: quantity, total: total}
         }
         return item
@@ -40,6 +47,7 @@ export const CartList = () => {
         if(item.id === itemId && item.quantity < 10){
             const quantity = item.quantity + 1
             const total = item.new_price * quantity
+            // const formattedNum = total.toLocaleString('en-US')
             return {...item, quantity: quantity, total: total}
         }
         return item
@@ -152,7 +160,7 @@ export const CartList = () => {
                   </td>
                   {/* Giá */}
                   <td className='w-44 text-lg'>
-                    <div className="flex justify-between mx-8">
+                    <div className="flex justify-between mx-8 w-36">
                       <h1 className='text line-through'>{item.old_price}</h1>
                       <h1 className='font-bold text-red-500'>{item.new_price}</h1>
                     </div>
@@ -168,7 +176,7 @@ export const CartList = () => {
             </tbody>
           </table>
           <div className='flex justify-between border-t-2 border-slate-400 mx-32 pb-20'>
-            <h1 className='text-xl pt-10 flex ml-16'><h1 className='font-semibold mr-3'>Thành tiền: </h1>{total}</h1>
+            <h1 className='text-xl pt-10 flex ml-16'><h1 className='font-semibold mr-3'>Thành tiền: </h1>{formattedNum}</h1>
             <Link to='/payment'>
               <h1 className='text-lg font-semibold px-16 mr-16 mt-8 h-12 bg-cyan-600 align-middle my-auto rounded-lg text-white pt-3 cursor-pointer hover:opacity-90' onClick={handlePayment}>Tiến hành thanh toán</h1>
             </Link>

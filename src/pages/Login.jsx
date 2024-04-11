@@ -9,6 +9,7 @@ export const Login = () => {
 
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
+    const [currentAcc, SetCurrentAcc] = useState([])
 
     const navigate = useNavigate()
 
@@ -29,16 +30,15 @@ export const Login = () => {
 
     const handleClick = () => {
         const result = users.filter(item => item.username === username && item.password === password)
-
-        console.log(result)
+        console.log(result[0])
         if(result.length > 0){
             if(result[0].role === 'user'){
-                const currentAcc = {username: result[0].username}
+                const currentAcc = result[0]
                 localStorage.setItem('currentAcc', JSON.stringify(currentAcc))
                 navigate('/')
             }
             if(result[0].role === 'admin'){
-                const currentAcc = {username: result[0].username}
+                const currentAcc = result[0]
                 localStorage.setItem('currentAcc', JSON.stringify(currentAcc))
                 navigate('/admin')
             }
@@ -49,6 +49,8 @@ export const Login = () => {
             setPassword('')
         }
     }
+
+    // console.log('current: ', currentAcc)
     
     return (
         <div className='flex'>
