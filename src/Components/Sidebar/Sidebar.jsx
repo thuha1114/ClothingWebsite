@@ -118,7 +118,7 @@ export default function Sidebar({ children }) {
           </li>
           
           <li>
-            <Link to="/chi-tiet-don-hang" className="flex items-center space-x-2 text-gray-600 hover:text-gray-800">
+            <Link to="/admin/quanlybanhang" className="flex items-center space-x-2 text-gray-600 hover:text-gray-800">
               <span>Quản lý bán hàng</span>
               <span>→</span>
             </Link>
