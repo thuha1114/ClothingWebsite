@@ -2,7 +2,7 @@ let users = [
   {
     "id": 1,
     "username": "abc123",
-    "password": "abc123",
+    "password": "123456",
     "role": "user",
     "fullname": "Nguyễn Thị A",
     "phone_number": "0987654321",
@@ -10,83 +10,26 @@ let users = [
   },
   {
     "id": 2,
-    "username": "abcabc",
-    "password": "abcabc",
-    "role": "admin",
-    "fullname": "Nguyễn Thị B",
+    "username": "admin",
+    "password": "admin",
+    "role": "admin"
+  },
+  {
+    "id": 3,
+    "username": "thuha",
+    "password": "123456",
+    "role": "user",
+    "fullname": "nguyễn thị thu hà",
     "phone_number": "0987654321",
-    "address": "273 An Dương Vương, HCM"
+    "address": "273 an dương vương, phường 3, quận 5"
   },
   {
-    "id": 642,
-    "username": "thuha",
-    "password": "12345",
-    "role": "user",
-    "fullname": "Ha Nguyen",
-    "phone_number": "0965820121",
-    "address": "273 An Duong Vuong, Ward 3, District 5"
-  },
-  {
-    "id": 600,
-    "username": "thuha",
-    "password": "12345",
-    "role": "user",
-    "fullname": "Ha Nguyen",
-    "phone_number": "0965820121",
-    "address": "273 An Duong Vuong, Ward 3, District 5"
-  },
-  {
-    "id": 907,
-    "username": "thuha111",
-    "password": "12345",
-    "role": "user",
-    "fullname": "Ha Nguyen",
-    "phone_number": "0965820121",
-    "address": "273 An Duong Vuong, Ward 3, District 5"
-  },
-  {
-    "id": 668,
-    "username": "aaaaaaa",
-    "password": "12345",
-    "role": "user",
-    "fullname": "Ha Nguyen",
-    "phone_number": "0965820121",
-    "address": "273 An Duong Vuong, Ward 3, District 5"
-  },
-  {
-    "id": 510,
-    "username": "thuha1114",
-    "password": "123456789",
-    "role": "user",
-    "fullname": "Ha Nguyen",
-    "phone_number": "0965820121",
-    "address": "273 An Duong Vuong, Ward 3, District 5"
-  },
-  {
-    "id": 10,
-    "username": "thuha123",
-    "password": "12345",
-    "role": "user",
-    "fullname": "Ha Nguyen",
-    "phone_number": "0965820121",
-    "address": "273 An Duong Vuong, Ward 3, District 5"
-  },
-  {
-    "id": 166,
+    "id": 4,
     "username": "thuha1411",
-    "password": "12345",
-    "role": "user",
-    "fullname": "Ha Nguyen",
-    "phone_number": "0965820121",
-    "address": "273 An Duong Vuong, Ward 3, District 5"
-  },
-  {
-    "id": 174,
-    "username": "user1",
     "password": "123456789",
     "role": "user",
     "fullname": "Ha Nguyen",
-    "phone_number": "0965820121",
+    "phone_number": "0987654321",
     "address": "273 An Duong Vuong, Ward 3, District 5"
   }
 ];

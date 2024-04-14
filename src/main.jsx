@@ -22,7 +22,8 @@ import { ForgetPass } from './pages/ForgetPass.jsx';
 import {SignUp} from './pages/SignUp.jsx';
 import {Admin} from './pages/Admin.jsx';
 import { History } from './pages/history.jsx';
-import { Quanlybanhang } from './pages/Quanlybanhang.jsx';
+import { OrdersManager } from './pages/OrdersManager.jsx';
+import { ProductsManager } from './pages/ProductsManager.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -77,10 +78,13 @@ const router = createBrowserRouter([
     element: <History />,
   },
   {
-    path: "/admin/quanlybanhang",
-    element: <Quanlybanhang />,
+    path: "/admin/orders_manager",
+    element: <OrdersManager />,
   },
-  
+  {
+    path: "/admin/products_manager",
+    element: <ProductsManager />,
+  },
 ]);
 
 

@@ -19,12 +19,6 @@ export const CartList = () => {
     return result
   },[cartList])
 
-  const formattedNum = useMemo(()=>{
-    const formattedNum = total.toLocaleString('en-US')
-    return formattedNum
-  },[total])
-
-
   const handleDecrease = (itemId) => {
     setCartList(prevCartList => {
       const updateCart = prevCartList.map(item => {
@@ -161,12 +155,12 @@ export const CartList = () => {
                   {/* Giá */}
                   <td className='w-44 text-lg'>
                     <div className="flex justify-between mx-8 w-36">
-                      <h1 className='text line-through'>{item.old_price}</h1>
-                      <h1 className='font-bold text-red-500'>{item.new_price}</h1>
+                      <h1 className='text line-through'>{item.old_price.toLocaleString('en-us')}</h1>
+                      <h1 className='font-bold text-red-500'>{item.new_price.toLocaleString('en-us')}</h1>
                     </div>
                   </td>
                   {/* Tổng cộng */}
-                  <td className='w-32 text-center text-lg'>{item.total}</td>
+                  <td className='w-32 text-center text-lg'>{item.total.toLocaleString('en-us')}</td>
                   {/* Xóa sản phẩm */}
                   <td className='w-32 text-center'>
                     <i className="fa-solid fa-trash cursor-pointer hover:opacity-80" onClick={() => setItemDelete(item.id)} ></i>
@@ -176,7 +170,7 @@ export const CartList = () => {
             </tbody>
           </table>
           <div className='flex justify-between border-t-2 border-slate-400 mx-32 pb-20'>
-            <h1 className='text-xl pt-10 flex ml-16'><h1 className='font-semibold mr-3'>Thành tiền: </h1>{formattedNum}</h1>
+            <h1 className='text-xl pt-10 flex ml-16'><h1 className='font-semibold mr-3'>Thành tiền: </h1>{total.toLocaleString('en-us')}</h1>
             <Link to='/payment'>
               <h1 className='text-lg font-semibold px-16 mr-16 mt-8 h-12 bg-cyan-600 align-middle my-auto rounded-lg text-white pt-3 cursor-pointer hover:opacity-90' onClick={handlePayment}>Tiến hành thanh toán</h1>
             </Link>

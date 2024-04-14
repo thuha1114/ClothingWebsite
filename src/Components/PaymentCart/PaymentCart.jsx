@@ -42,17 +42,6 @@ export const PaymentCart = () => {
         return result
       },[cartPayment])
 
-    const formattedNum =  useMemo(()=>{
-      const formattedNum = total.toLocaleString('en-US')
-    return formattedNum
-    },[total])
-
-    const formatted = useMemo(()=>{
-      const sum = total + 30000
-      const formatted = sum.toLocaleString('en-US')
-      return formatted
-    },[total])
-
     const handleDecrease = (itemId) => {
       setCartPayment(prevCartList => {
         const updateCart = prevCartList.map(item => {
@@ -134,7 +123,6 @@ export const PaymentCart = () => {
                   onSubmit={(values, {setSubmitting}) => {
                     const info = {orderID:  Math.random().toString(36).substr(2, 9),username: currentAcc.username, fullname: values.fullName, phone_number: values.phoneNumber, address: values.address, status_order: 'chờ xác nhận', products: [...cartPayment]}
                     addOrder(info)
-
                     console.log('thông tin đơn hàng:', info )
                     navigate('/confirm')
                   }}
@@ -206,12 +194,12 @@ export const PaymentCart = () => {
                             {/* Giá */}
                             <td className='w-44 text-lg'>
                                 <div className="flex justify-between mx-8 w-32">
-                                <h1 className='text line-through'>{item.old_price}</h1>
-                                <h1 className='font-bold text-red-500'>{item.new_price}</h1>
+                                <h1 className='text line-through'>{item.old_price.toLocaleString('en-us')}</h1>
+                                <h1 className='font-bold text-red-500'>{item.new_price.toLocaleString('en-us')}</h1>
                                 </div>
                             </td>
                             {/* Tổng cộng */}
-                            <td className='w-32 text-center text-lg'>{item.total}</td>
+                            <td className='w-32 text-center text-lg'>{item.total.toLocaleString('en-us')}</td>
                             {/* Xóa sản phẩm */}
                             <td className='w-32 text-center'>
                                 <i className="fa-solid fa-trash cursor-pointer hover:opacity-80" onClick={() => setItemDelete(item.id)} ></i>
@@ -221,11 +209,11 @@ export const PaymentCart = () => {
                         </tbody>
                     </table>
                     <div className='flex justify-between border-t-2 border-slate-400 mx-32 pb-20'>
-                        <h1 className='text-xl pt-10 flex ml-16'><h1 className='font-semibold mr-3'>Thành tiền: </h1>{formattedNum}</h1>
+                        <h1 className='text-xl pt-10 flex ml-16'><h1 className='font-semibold mr-3'>Thành tiền: </h1>{total.toLocaleString('en-us')}</h1>
                         <h1 className='text-xl pt-10 flex ml-16'><h1 className='font-semibold mr-3'>Phí vận chuyển:</h1>30,000</h1>
-                        <h1 className='text-xl pt-10 flex ml-16'><h1 className='font-semibold mr-3'>Tổng cộng: </h1>{formatted}</h1>
+                        <h1 className='text-xl pt-10 flex ml-16'><h1 className='font-semibold mr-3'>Tổng cộng: </h1>{(total+30000).toLocaleString('en-us')}</h1>
                         <button 
-                          className='text-lg font-semibold px-16 mr-16 mt-8 h-12 bg-cyan-600 align-middle my-auto rounded-lg text-white pt-3 cursor-pointer hover:opacity-90' 
+                          className='text-lg font-semibold px-16 mr-16 mt-8 h-12 bg-cyan-600 align-middle my-auto rounded-lg text-white pt-2 cursor-pointer hover:opacity-90' 
                           type='submit'
                         >Xác nhận</button>
                     </div>

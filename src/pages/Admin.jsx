@@ -1,7 +1,6 @@
 
 import { Outlet } from 'react-router-dom'
 import Sidebar from '../Components/Sidebar/Sidebar'
-import Header from '../Components/Header/Header'
 import React from 'react'
 import mainImage from '../../public/images/adminpage.jpg';
 
@@ -11,7 +10,6 @@ export const Admin = () => {
 			<Sidebar />
 			
 			<div className="flex flex-col flex-1">
-				<Header />
 				<div className="flex items-center justify-end py-2">
 					<div className="overflow-hidden w-full h-1200 rounded-lg border border-gray-300">
 						<img

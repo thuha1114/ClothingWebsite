@@ -138,8 +138,8 @@ export const MensProducts = () => {
                   <img src={product.image[0]}/>
                   <div className='mx-4 my-2 font-semibold truncate'>{product.name}</div>
                   <div className='flex justify-between px-4 pb-4 text-lg'>
-                      <h4 className='font-bold line-through'>{product.old_price}</h4>
-                      <h4 className='font-bold text-red-500'>{product.new_price}</h4>
+                      <h4 className='font-bold line-through'>{product.old_price.toLocaleString('en-us')}</h4>
+                      <h4 className='font-bold text-red-500'>{product.new_price.toLocaleString('en-us')}</h4>
                   </div>
 
                 </Link>

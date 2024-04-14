@@ -50,8 +50,11 @@ export const SignUp = () => {
                             address: ''
                         }}
                         validationSchema={Yup.object({
-                            username: Yup.string().required('Tên đăng nhập không được để trống'),
-                            password: Yup.string().required('Mật khẩu không được để trống'),
+                            username: Yup.string().required('Tên đăng nhập không được để trống')
+                                        .test('checkUser','Người dùng này đã tồn tại', function(value){
+                                            return !users.some(item => item.username === value)
+                                        }),
+                            password: Yup.string().required('Mật khẩu không được để trống').min(6,'Mật khẩu phải có ít nhất 6 ký tự!'),
                             repass: Yup.string().oneOf([Yup.ref('password'), null], 'Mật khẩu không khớp'),
                             name: Yup.string().required('Họ và tên không được để trống').matches(/^[\p{L}\s']+$/u, 'Họ và tên không hợp lệ'),
                             phoneNumber: Yup.string().required('Số điện thoại không được để trống').matches(/^(0|\+84)(\d{9,10})$/, 'Số điện thoại không hợp lệ'),
@@ -63,7 +66,13 @@ export const SignUp = () => {
                                 alert('Tên đăng nhập đã tồn tại');
 
                             } else {
-                                const user = { id: Math.floor(Math.random() * 1000), username: values.username, password: values.password, role: 'user', fullname: values.name, phone_number: values.phoneNumber, address: values.address }
+                                const user = { 
+                                    id: users[users.length - 1].id + 1, 
+                                    username: values.username, 
+                                    password: values.password, 
+                                    role: 'user', fullname: values.name, 
+                                    phone_number: values.phoneNumber, 
+                                    address: values.address }
                                 addUser(user);
                                 localStorage.setItem('currentAcc', JSON.stringify({username: user.username}))
                                 navigate('/')
@@ -95,7 +104,7 @@ export const SignUp = () => {
                             {/* Họ và tên */}
                             <div className="border-2 rounded-lg mx-24 h-10 mt-5 border-blue-200">
                                 <i className="text-cyan-800 fa-solid fa-pen w-10 h-full text-xl pt-1 text-center my-auto border-r-2 border-blue-200 opacity-70 align-middle"></i>
-                                <Field type="text" name="name" placeholder="Nhập họ tên ..." className='outline-none pl-5 text-blue-400 font-semibold w-96' />
+                                <Field type="text" name="name" placeholder="Nhập họ tên ..." className='outline-none pl-5 text-blue-400 font-semibold w-96 capitalize' />
                                 <ErrorMessage name="name" component="div" className="text-red-500" />
                             </div>
                             {/* Số điện thoại */}
@@ -107,7 +116,7 @@ export const SignUp = () => {
                             {/* Địa chỉ */}
                             <div className="border-2 rounded-lg mx-24 h-10 mt-5 border-blue-200">
                                 <i className="text-cyan-800 fa-solid fa-location-dot w-10 h-full text-xl pt-1 text-center my-auto border-r-2 border-blue-200 opacity-70 align-middle"></i>
-                                <Field type="text" name="address" placeholder="Nhập địa chỉ ..." className='outline-none pl-5 text-blue-400 font-semibold' />
+                                <Field type="text" name="address" placeholder="Nhập địa chỉ ..." className='outline-none pl-5 text-blue-400 font-semibold w-5/6 capitalize' />
                                 <ErrorMessage name="address" component="div" className="text-red-500" />
                             </div>
                             {/* Nút Đăng ký */}
@@ -124,6 +133,7 @@ export const SignUp = () => {
                     <Link to='/login'>
                         <h1 className='text-blue-600 font-semibold text-center hover:opacity-80 mb-2'>Bạn đã có tài khoản rồi?</h1>
                     </Link>
+
                 </div>
             </div>
         </div>

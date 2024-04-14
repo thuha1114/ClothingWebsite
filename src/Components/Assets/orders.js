@@ -94,7 +94,7 @@ let orders = [
     "fullname": "Ha Nguyen",
     "phone_number": "0965820121",
     "address": "273 An Duong Vuong, Ward 3, District 5",
-    "status_order": "chờ xác nhận",
+    "status_order": "xác nhận",
     "products": [
       {
         "id": 30,
@@ -139,7 +139,7 @@ let orders = [
     "fullname": "Ha Nguyen",
     "phone_number": "0965820121",
     "address": "273 An Duong Vuong, Ward 3, District 5",
-    "status_order": "chờ xác nhận",
+    "status_order": "xác nhận",
     "products": [
       {
         "id": 26,
@@ -157,6 +157,61 @@ let orders = [
         "quantity": 1,
         "size": "S",
         "total": 100000
+      }
+    ]
+  },
+  {
+    "orderID": "p4rdb0ql4",
+    "username": "abc123",
+    "fullname": "Nguyễn Thị A",
+    "phone_number": "0987654321",
+    "address": "30 Trịnh Đình Thảo, HCM",
+    "status_order": "xác nhận",
+    "products": [
+      {
+        "id": 11,
+        "name": "Áo khoác len PCFENNA",
+        "category": "women",
+        "image": [
+          "/src/Components/Assets/product_11.png",
+          "/src/Components/Assets/p11_1_img.png",
+          "/src/Components/Assets/p11_2_img.png"
+        ],
+        "new_price": 32000,
+        "old_price": 40000,
+        "sub_category": "sweater",
+        "description": "Áo khoác PCFENNA là một lựa chọn hoàn hảo cho mùa đông. Với chất liệu len mềm mại và ấm áp, chiếc áo này mang lại cảm giác thoải mái và ấm cúng cho người mặc. Thiết kế cardigan truyền thống với kiểu dáng rộng rãi và cúc nút phía trước, áo len PCFENNA không chỉ giữ ấm cho cơ thể mà còn tạo điểm nhấn cho trang phục. Phối hợp dễ dàng với nhiều loại trang phục khác nhau, từ váy đến quần jean, áo len này thích hợp cho mọi dịp từ đi làm đến dạo phố. Với phong cách đơn giản nhưng thanh lịch, PCFENNA là một phần không thể thiếu trong tủ đồ mùa đông của bạn.",
+        "status": "best-seller",
+        "quantity": 4,
+        "size": "M",
+        "total": 128000
+      }
+    ]
+  },
+  {
+    "orderID": "mxzetth0e",
+    "username": "abc123",
+    "fullname": "Thu Hà",
+    "phone_number": "0987654321",
+    "address": "30 Trịnh Đình Thảo, HCM",
+    "status_order": "chờ xác nhận",
+    "products": [
+      {
+        "id": 15,
+        "name": "Áo sơ mi tay dài sọc xanh",
+        "category": "men",
+        "image": [
+          "/src/Components/Assets/product_15.png",
+          "/src/Components/Assets/p15_1_img.png",
+          "/src/Components/Assets/p15_2_img.png"
+        ],
+        "new_price": 103000,
+        "old_price": 129000,
+        "sub_category": "shirt",
+        "description": "Chiếc áo sơ mi tay dài sọc xanh là một lựa chọn lịch lãm và phong cách cho quý ông. Với sọc xanh truyền thống trên nền trắng, áo này tạo điểm nhấn tinh tế và năng động. Chất liệu vải mềm mại và thoáng khí mang lại cảm giác thoải mái và dễ chịu trong mọi tình huống. Thiết kế tay dài giúp bảo vệ cơ thể khỏi ánh nắng mặt trời và hơi lạnh, đồng thời tạo nên vẻ lịch lãm và chuyên nghiệp. Phù hợp cho nhiều dịp từ đi làm đến gặp gỡ bạn bè, chiếc áo sơ mi này là lựa chọn hoàn hảo để thể hiện phong cách nam tính và sang trọng của bạn.",
+        "quantity": 1,
+        "size": "S",
+        "total": 103000
       }
     ]
   }

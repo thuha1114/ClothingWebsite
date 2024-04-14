@@ -25,8 +25,8 @@ export const NewCollection = () => {
                     <img src={item.image[0]} className='w-full h-80'/>
                     <div className='mx-4 my-2 font-semibold truncate'>{item.name}</div>
                     <div className='flex justify-between px-4 pb-4 text-lg'>
-                        <h4 className='font-bold line-through'>{item.old_price}</h4>
-                        <h4 className='font-bold text-red-500'>{item.new_price}</h4>
+                        <h4 className='font-bold line-through'>{item.old_price.toLocaleString('en-us')}</h4>
+                        <h4 className='font-bold text-red-500'>{item.new_price.toLocaleString('en-us')}</h4>
                     </div>
                   </div>
                   <i className="fa-solid fa-eye absolute top-48 left-1/2 text-3xl hidden group-hover:block cursor-pointer text-slate-800"></i>

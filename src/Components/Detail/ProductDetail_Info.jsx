@@ -111,9 +111,9 @@ export const ProductDetail_Info = () => {
             </div>
             <div className='flex-1 mx-4'>
                 <div className=' my-2 font-semibold text-xl'>{product[0].name}</div>
-                <div className='flex justify-between px-4 pb-4 text-lg w-52'>
-                    <h4 className='font-bold line-through'>{product[0].old_price}</h4>
-                    <h4 className='font-bold text-red-500'>{product[0].new_price}</h4>
+                <div className='flex justify-between pb-4 text-lg w-52'>
+                    <h4 className='font-bold line-through'>{product[0].old_price.toLocaleString('en-us')}</h4>
+                    <h4 className='font-bold text-red-500'>{product[0].new_price.toLocaleString('en-us')}</h4>
                 </div>
                 <div>
                     <h1 className='text-xl font-semibold'>Kích thước sản phẩm</h1>

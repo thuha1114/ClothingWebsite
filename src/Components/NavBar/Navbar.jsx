@@ -116,9 +116,9 @@ export const Navbar = () => {
                                     <img src={item.image[0]} alt="Hỉnh ảnh sản phẩm" className='w-16 h-16 my-3' />                               
                                     <div className='my-auto ml-5 w-3/4'>
                                         <h1 className='truncate'>{item.name}</h1>
-                                        <div className='flex justify-between w-24'>
-                                            <h1 className='line-through '>{item.old_price}</h1>
-                                            <h1 className='text-red-500 font-bold'>{item.new_price}</h1>
+                                        <div className='flex justify-between w-36'>
+                                            <h1 className='line-through '>{item.old_price.toLocaleString('en-us')}</h1>
+                                            <h1 className='text-red-500 font-bold'>{item.new_price.toLocaleString('en-us')}</h1>
                                         </div>
                                     </div>                 
                                 </div>
