@@ -30,7 +30,7 @@ export const Login = () => {
 
     const handleClick = () => {
         const result = users.filter(item => item.username === username && item.password === password)
-        console.log(result[0])
+        console.log("user: ", result[0])
         if(result.length > 0){
             if(result[0].role === 'user'){
                 const currentAcc = result[0]

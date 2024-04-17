@@ -9,6 +9,7 @@ import { saveAs } from 'file-saver';
 
 export const SignUp = () => {
 
+
     const [userData, setUserData] = useState(users);
 
     const addUser = (user) => {
@@ -57,7 +58,7 @@ export const SignUp = () => {
                             password: Yup.string().required('Mật khẩu không được để trống').min(6,'Mật khẩu phải có ít nhất 6 ký tự!'),
                             repass: Yup.string().oneOf([Yup.ref('password'), null], 'Mật khẩu không khớp'),
                             name: Yup.string().required('Họ và tên không được để trống').matches(/^[\p{L}\s']+$/u, 'Họ và tên không hợp lệ'),
-                            phoneNumber: Yup.string().required('Số điện thoại không được để trống').matches(/^(0|\+84)(\d{9,10})$/, 'Số điện thoại không hợp lệ'),
+                            phoneNumber: Yup.string().required('Số điện thoại không được để trống').matches( /^(03|05|07|08|09|01[2|6|8|9])+([0-9]{8})\b/, 'Số điện thoại không hợp lệ'),
                             address: Yup.string().required('Địa chỉ không được để trống')
                         })}
                         onSubmit={(values, { setSubmitting }) => {
@@ -104,7 +105,7 @@ export const SignUp = () => {
                             {/* Họ và tên */}
                             <div className="border-2 rounded-lg mx-24 h-10 mt-5 border-blue-200">
                                 <i className="text-cyan-800 fa-solid fa-pen w-10 h-full text-xl pt-1 text-center my-auto border-r-2 border-blue-200 opacity-70 align-middle"></i>
-                                <Field type="text" name="name" placeholder="Nhập họ tên ..." className='outline-none pl-5 text-blue-400 font-semibold w-96 capitalize' />
+                                <Field type="text" name="name" placeholder="Nhập họ tên ..." className='outline-none pl-5 text-blue-400 font-semibold w-5/6 capitalize' />
                                 <ErrorMessage name="name" component="div" className="text-red-500" />
                             </div>
                             {/* Số điện thoại */}

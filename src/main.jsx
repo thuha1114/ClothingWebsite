@@ -24,6 +24,7 @@ import {Admin} from './pages/Admin.jsx';
 import { History } from './pages/history.jsx';
 import { OrdersManager } from './pages/OrdersManager.jsx';
 import { ProductsManager } from './pages/ProductsManager.jsx';
+import { Profile } from './pages/Profile.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -76,6 +77,10 @@ const router = createBrowserRouter([
   {
     path: "/history",
     element: <History />,
+  },
+  {
+    path: "/profile",
+    element: <Profile />,
   },
   {
     path: "/admin/orders_manager",

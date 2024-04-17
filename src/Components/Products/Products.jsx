@@ -67,8 +67,8 @@ export const Products = () => {
         const result = all_products.filter(item => item.id !== id)
         setProducts(result)
         localStorage.setItem('updatedProducts', JSON.stringify(result));
-        saveProductsToFile(result)
         notify()
+        saveProductsToFile(result)
     }
 
     useEffect(() => {

@@ -46,8 +46,8 @@ export const ProductDetail_Info = () => {
 
     const navigate = useNavigate()
 
-    const notify = () => {
-        toast.error('Phải đăng nhập để tiếp tục mua hàng', {
+    const notify = (message) => {
+        toast.error(message, {
             position: 'top-right',
             autoClose: 3000,
             hideProgressBar: false,
@@ -56,19 +56,6 @@ export const ProductDetail_Info = () => {
             draggable: true,
             progress: undefined,
             toastId: 'notify',
-        });
-    };
-
-    const notifySize = () => {
-        toast.error('Phải chọn size trước khi mua hàng', {
-            position: 'top-right',
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            toastId: 'notifySize',
         });
     };
     
@@ -85,12 +72,12 @@ export const ProductDetail_Info = () => {
                 navigate('/cart')
             }
             else{
-                notifySize()
+                notify('Phải chọn size trước khi mua hàng!')
             }
         }
         else{
             setDisable(true)
-            notify()
+            notify('Phải đăng nhập mới được mua hàng!')
             setTimeout(() => {
                 setDisable(false); // Reset disabled after 3 seconds
             }, 3000);
@@ -134,8 +121,7 @@ export const ProductDetail_Info = () => {
                         disabled={disabled}
                         >
                     Thêm vào giỏ hàng</button>
-                    <ToastContainer toastId='notify' />
-                    <ToastContainer toastId='notifySize'  />
+                    <ToastContainer />
                     <h1 className='text-xl py-5 font-semibold'>Mô tả sản phẩm</h1>
                     <h1 className='text-justify mr-16 leading-7'>{product[0].description}</h1>
                 </div>

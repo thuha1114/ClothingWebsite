@@ -29,6 +29,8 @@ export const Navbar = () => {
         return currentAcc ? currentAcc : false
     })
 
+    console.log('Tài khoản hiện tại: ', currentAcc)
+
     const [isAcc, setIsAcc] = useState(()=>{
         return currentAcc ? true : false
     })
@@ -137,10 +139,15 @@ export const Navbar = () => {
                 {/* </Link> */}
                 {isAcc ? (
                     <div className="mx-4 m-auto flex">
-                        <i className="fa-solid fa-circle-user text-2xl mx-3 text-blue-700"></i>
+                        {currentAcc.avt === undefined ? (
+                             <i className="fa-solid fa-circle-user text-2xl mx-3 text-blue-700"></i>
+                        ): (
+                            <img src={currentAcc.avt} className='w-8 h-8 mr-5 rounded-full border-2 border-cyan-700' />
+                        )}
+                       
                         <h1 className='text-lg group relative cursor-pointer'>{currentAcc.username}
                             <ul className='text-base absolute w-40 bg-white rounded-lg shadow-custom-shadow hidden group-hover:block'>
-                                <Link to='/sanpham'>
+                                <Link to='/profile'>
                                     <li className='py-1 border-b-2 pl-3 cursor-pointer hover:font-bold'>Tài khoản cá nhân</li>
 
                                 </Link>

@@ -194,7 +194,7 @@ let orders = [
     "fullname": "Thu Hà",
     "phone_number": "0987654321",
     "address": "30 Trịnh Đình Thảo, HCM",
-    "status_order": "chờ xác nhận",
+    "status_order": "xác nhận",
     "products": [
       {
         "id": 15,
@@ -212,6 +212,33 @@ let orders = [
         "quantity": 1,
         "size": "S",
         "total": 103000
+      }
+    ]
+  },
+  {
+    "orderID": "kasumonld",
+    "username": "thuha1411",
+    "fullname": "Ha Nguyen",
+    "phone_number": "0987654321",
+    "address": "273 An Duong Vuong, Ward 3, District 5",
+    "status_order": "xác nhận",
+    "products": [
+      {
+        "id": 25,
+        "name": "Quần yếm Infinity Love",
+        "category": "kid",
+        "image": [
+          "/src/Components/Assets/product_25.png",
+          "/src/Components/Assets/p25_1_img.png",
+          "/src/Components/Assets/p25_2_img.png"
+        ],
+        "new_price": 96000,
+        "old_price": 120000,
+        "sub_category": "pants",
+        "description": "Quần yếm Infinity Love\" là một lựa chọn hoàn hảo cho các bé gái với thiết kế đáng yêu và dễ thương. Được làm từ chất liệu vải mềm mại và thoáng khí, quần yếm này mang lại sự thoải mái cho bé suốt cả ngày. Với họa tiết Infinity Love tinh tế và lãng mạn, chiếc quần yếm này sẽ làm cho bé trở nên nổi bật và đáng yêu hơn. Thiết kế có dây đeo điều chỉnh và các nút cài phía trước, giúp dễ dàng mặc và tháo ra. Sự kết hợp hoàn hảo giữa phong cách và thoải mái, quần yếm Infinity Love sẽ là một bổ sung đáng yêu cho tủ đồ của bé.",
+        "quantity": 3,
+        "size": "M",
+        "total": 288000
       }
     ]
   }

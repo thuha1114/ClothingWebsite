@@ -75,8 +75,7 @@ export const FormProducts = () => {
                     description: Yup.string().required('Trường này không được để trống!'),
                     
                 })}
-                onSubmit= {(values, {setSubmitting, setFieldValue }) => {       
-                    
+                onSubmit= {(values, {setSubmitting, setFieldValue }) => {         
                     const result = {
                         id: all_products[all_products.length-1].id + 1,
                         name: values.name,
@@ -89,10 +88,8 @@ export const FormProducts = () => {
                         status: values.status,
             
                     }
-
                     saveProductsToFile([...all_products, result])
                     notify()
-                   
                 }}
             >
                 <Form>

@@ -191,7 +191,7 @@ export const Orders = () => {
                         onClick={handleHide}
                     ></i>
                     <div className='w-1/2 bg-white py-10 rounded-xl overflow-auto h-5/6'>
-                        <div className='text-center uppercase font-bold text-xl pb-7 text-cyan-500'>Form sửa thông tin đơn hàng</div>
+                        <div className='text-center uppercase font-bold text-xl pb-7 text-cyan-500'>Form cập nhật trạng thái đơn hàng</div>
                         <Formik
                             initialValues={{
                                 orderID : '',

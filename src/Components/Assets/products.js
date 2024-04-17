@@ -1,43 +1,14 @@
 let products = [
   {
-    "id": 2,
-    "name": "Áo sơ mi sọc ",
-    "category": "women",
-    "image": [
-      "/src/Components/Assets/product_2.png",
-      "/src/Components/Assets/p2_1_img.png",
-      "/src/Components/Assets/p2_2_img.png"
-    ],
-    "new_price": 96000,
-    "old_price": 120000,
-    "sub_category": "shirt",
-    "description": "Áo sơ mi sọc PCSADIE là một item thời trang không thể thiếu trong tủ đồ của bạn. Với thiết kế đơn giản nhưng không kém phần thanh lịch, áo này mang lại sự tự tin và phong cách cho người mặc. Sọc ngang tinh tế trên nền vải màu trắng tạo điểm nhấn độc đáo và trẻ trung. Chất liệu vải mềm mại và thoáng mát giúp bạn cảm thấy thoải mái suốt cả ngày dài. Áo sơ mi sọc PCSADIE dễ dàng phối cùng quần jean hoặc chân váy, phù hợp cho nhiều dịp khác nhau từ đi làm đến dạo phố hay gặp gỡ bạn bè.",
-    "status": "best-seller"
-  },
-  {
-    "id": 4,
-    "name": "Quần dài chân rộng PCJAMMY",
-    "category": "women",
-    "image": [
-      "/src/Components/Assets/product_4.png",
-      "/src/Components/Assets/p4_1_img.png",
-      "/src/Components/Assets/p4_2_img.png"
-    ],
-    "new_price": 120000,
-    "old_price": 150000,
-    "sub_category": "trouser",
-    "description": "Quần dài chân rộng PCJAMMY là sự kết hợp hoàn hảo giữa phong cách và thoải mái. Với kiểu dáng chân rộng rả rích, quần này mang lại cảm giác thoải mái và tự tin cho người mặc. Chất liệu vải mềm mại và co giãn tạo sự linh hoạt trong mọi hoạt động. Thiết kế đơn giản nhưng không kém phần ấn tượng, quần PCJAMMY dễ dàng kết hợp với áo sơ mi hoặc áo phông tạo nên những bộ trang phục phong cách và độc đáo. Phù hợp cho nhiều dịp từ đi làm đến dạo phố hay gặp gỡ bạn bè, quần dài chân rộng PCJAMMY sẽ là một lựa chọn hoàn hảo cho tủ đồ của bạn."
-  },
-  {
     "id": 5,
-    "name": "Áo len PCMALINA",
+    "name": "Áo len ",
     "category": "women",
     "image": [
       "/src/Components/Assets/product_5.png",
       "/src/Components/Assets/p5_1_img.png",
       "/src/Components/Assets/p5_2_img.png"
     ],
-    "new_price": 77000,
+    "new_price": "80000",
     "old_price": 96000,
     "sub_category": "sweater",
     "description": "Áo len PCMALINA là một lựa chọn hoàn hảo cho những ngày se lạnh. Với chất liệu len mềm mại và ấm áp, chiếc áo này mang lại cảm giác thoải mái và ấm áp cho người mặc. Thiết kế đơn giản nhưng không kém phần thanh lịch, áo len này dễ dàng kết hợp với nhiều loại trang phục khác nhau. Với cổ tròn và độ dài phù hợp, nó phản ánh sự đơn giản và tinh tế. Phù hợp cho mọi dịp từ đi làm đến dạo phố, áo len PCMALINA sẽ là một phần không thể thiếu trong tủ đồ của bạn trong mùa lạnh này."
@@ -451,18 +422,18 @@ let products = [
     "status": "best-seller"
   },
   {
-    "id": 36,
-    "name": "Đồ nam",
-    "category": "",
+    "id": 37,
+    "name": "áo khoác nữ",
+    "category": "women",
     "image": [
-      "blob:http://localhost:5173/e5dbf927-1243-4903-858e-72f7ac85f414",
-      "blob:http://localhost:5173/aa4e7d06-c32e-4211-b73f-9cee070543ed",
-      "blob:http://localhost:5173/22aec76d-87c7-4043-8eca-c6e76ed6901d"
+      "blob:http://localhost:5173/d8dec260-5d72-4fb0-9469-077df4cf4413",
+      "blob:http://localhost:5173/00940b7e-ff20-4671-bdad-b84b1974d227",
+      "blob:http://localhost:5173/8d3be3b3-36e2-40bd-9f75-83f0809069f2"
     ],
     "old_price": "250000",
     "new_price": "200000",
-    "sub_category": "shirt",
-    "description": "áo sơ mi nam",
+    "sub_category": "jacket",
+    "description": "Áo khoác nữ với phong cách hiện đại, tối giản.",
     "status": "new-collection"
   }
 ];
