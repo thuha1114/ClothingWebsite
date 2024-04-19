@@ -1,19 +1,5 @@
 let products = [
   {
-    "id": 5,
-    "name": "Áo len ",
-    "category": "women",
-    "image": [
-      "/src/Components/Assets/product_5.png",
-      "/src/Components/Assets/p5_1_img.png",
-      "/src/Components/Assets/p5_2_img.png"
-    ],
-    "new_price": "80000",
-    "old_price": 96000,
-    "sub_category": "sweater",
-    "description": "Áo len PCMALINA là một lựa chọn hoàn hảo cho những ngày se lạnh. Với chất liệu len mềm mại và ấm áp, chiếc áo này mang lại cảm giác thoải mái và ấm áp cho người mặc. Thiết kế đơn giản nhưng không kém phần thanh lịch, áo len này dễ dàng kết hợp với nhiều loại trang phục khác nhau. Với cổ tròn và độ dài phù hợp, nó phản ánh sự đơn giản và tinh tế. Phù hợp cho mọi dịp từ đi làm đến dạo phố, áo len PCMALINA sẽ là một phần không thể thiếu trong tủ đồ của bạn trong mùa lạnh này."
-  },
-  {
     "id": 6,
     "name": "Áo dài tay PCMISSIE",
     "category": "women",
@@ -420,21 +406,6 @@ let products = [
     "sub_category": "skirt",
     "description": "Trang phục cho những dịp đặc biệt. Đầm hồng Alilly Peach Whip của Flink. Chiếc đầm được sản xuất tại Bangladesh và có chi tiết xếp ly.",
     "status": "best-seller"
-  },
-  {
-    "id": 37,
-    "name": "áo khoác nữ",
-    "category": "women",
-    "image": [
-      "blob:http://localhost:5173/d8dec260-5d72-4fb0-9469-077df4cf4413",
-      "blob:http://localhost:5173/00940b7e-ff20-4671-bdad-b84b1974d227",
-      "blob:http://localhost:5173/8d3be3b3-36e2-40bd-9f75-83f0809069f2"
-    ],
-    "old_price": "250000",
-    "new_price": "200000",
-    "sub_category": "jacket",
-    "description": "Áo khoác nữ với phong cách hiện đại, tối giản.",
-    "status": "new-collection"
   }
 ];
 

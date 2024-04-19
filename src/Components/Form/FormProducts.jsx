@@ -1,5 +1,5 @@
 import { ErrorMessage, Field, Form, Formik } from 'formik'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import * as Yup from 'yup';
 import { products as all_products } from '../Assets/products';
 import { saveAs } from 'file-saver';
@@ -16,6 +16,7 @@ export const FormProducts = () => {
         const images = files.map((file) => URL.createObjectURL(file)); // Tạo URL cho từng tệp
         setSelectedImages((prevImages) => [...prevImages, ...images]); // Thêm ảnh vào danh sách đã chọn
     };
+
 
     // Xử lý sự kiện khi nhấp vào nút xóa ảnh
     const handleRemoveImage = (index) => {
@@ -212,7 +213,7 @@ export const FormProducts = () => {
                 </Form>
 
             </Formik>
-            <ToastContainer />
+            {/* <ToastContainer /> */}
         </div>
     )
 }

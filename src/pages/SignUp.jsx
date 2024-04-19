@@ -75,7 +75,7 @@ export const SignUp = () => {
                                     phone_number: values.phoneNumber, 
                                     address: values.address }
                                 addUser(user);
-                                localStorage.setItem('currentAcc', JSON.stringify({username: user.username}))
+                                localStorage.setItem('currentAcc', JSON.stringify(user))
                                 navigate('/')
                             }
                         

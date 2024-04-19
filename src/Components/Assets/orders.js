@@ -49,7 +49,7 @@ let orders = [
     "fullname": "Ha Nguyen",
     "phone_number": "0965820121",
     "address": "273 An Duong Vuong, Ward 3, District 5",
-    "status_order": "chờ xác nhận",
+    "status_order": "xác nhận",
     "products": [
       {
         "id": 24,
@@ -239,6 +239,61 @@ let orders = [
         "quantity": 3,
         "size": "M",
         "total": 288000
+      }
+    ]
+  },
+  {
+    "orderID": "qmi4do6xq",
+    "username": "thuha1411",
+    "fullname": "Nguyễn Thị Thu Hà",
+    "phone_number": "0987654321",
+    "address": "273 An Dương Vương, quận 5",
+    "status_order": "chờ xác nhận",
+    "products": [
+      {
+        "id": 18,
+        "name": "Quần âu ôm màu xám đậm",
+        "category": "men",
+        "image": [
+          "/src/Components/Assets/product_18.png",
+          "/src/Components/Assets/p18_1_img.png",
+          "/src/Components/Assets/p18_2_img.png"
+        ],
+        "new_price": 130000,
+        "old_price": 163000,
+        "sub_category": "trouser",
+        "description": "Những chiếc quần này là một kiểu dáng cổ điển mà phải có trong mọi tủ đồ, được chế tạo một cách tinh tế với việc kết thúc bằng chất liệu bông lụa để duy trì dáng vẻ và màu sắc sau mỗi lần giặt và mặc. Với dáng quần phù hợp với độ cao vừa phải của eo, kiểu dáng này có đùi ôm sát và chân quần thon gọn bắt đầu từ gối. Kết hợp chúng với một chiếc áo sơ mi flannel và một đôi giày boots da lộn để có một diện mạo bất hủ. Độ cao vừa phải của eo - Khoá kéo với nút cài - Dây đeo lưng - Túi xẻ hai bên - Túi sau với nút cài - Chất liệu bông lụa - Dáng ôm sát. Sản phẩm này được làm từ bông hữu cơ. Bông hữu cơ được trồng mà không sử dụng các chất hóa học độc hại. Nông nghiệp bông hữu cơ bảo vệ tài nguyên tự nhiên và sự đa dạng sinh học.",
+        "quantity": 3,
+        "size": "XS",
+        "total": 390000
+      }
+    ]
+  },
+  {
+    "orderID": "x80wat9sm",
+    "username": "thuha1411",
+    "fullname": "Ha Nguyen",
+    "phone_number": "0987654321",
+    "address": "273 An Duong Vuong, Ward 3, District 5",
+    "status_order": "chờ xác nhận",
+    "products": [
+      {
+        "id": 7,
+        "name": "Áo len cổ dài Jordan với dây kéo nửa dài và phối màu",
+        "category": "women",
+        "image": [
+          "/src/Components/Assets/product_7.png",
+          "/src/Components/Assets/p7_1_img.png",
+          "/src/Components/Assets/p7_2_img.png"
+        ],
+        "new_price": 104000,
+        "old_price": 130000,
+        "sub_category": "sweater",
+        "description": "Chiếc áo len cổ dài Jordan với dây kéo nửa dài và phối màu là một sự kết hợp hoàn hảo giữa phong cách thể thao và sự thoải mái. Với thiết kế phối màu độc đáo, chiếc áo này tạo điểm nhấn sáng tạo và cá tính. Dây kéo nửa dài giúp dễ dàng điều chỉnh nhiệt độ cơ thể và tạo sự linh hoạt cho trang phục. Chất liệu len mềm mại và ấm áp giữ cho bạn thoải mái và ấm trong mọi hoàn cảnh. Phù hợp cho việc đi chơi, tập thể dục hoặc thậm chí là cho những buổi hẹn cuối tuần, chiếc áo len Jordan sẽ là điểm nhấn độc đáo trong tủ đồ của bạn.",
+        "status": "new-collection",
+        "quantity": 2,
+        "size": "M",
+        "total": 208000
       }
     ]
   }
