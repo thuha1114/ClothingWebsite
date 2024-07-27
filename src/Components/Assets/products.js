@@ -10,7 +10,7 @@ let products = [
     ],
     "new_price": 56000,
     "old_price": 70000,
-    "sub_category": "T-shirt",
+    "sub_category": "jacket",
     "description": "Áo dài tay PCMISSIE là một lựa chọn hoàn hảo cho bất kỳ dịp nào trong mùa lạnh. Với chất liệu mềm mại và thoải mái, chiếc áo này mang lại cảm giác ấm áp và thoải mái cho người mặc. Thiết kế đơn giản nhưng không kém phần trẻ trung, áo dài tay này có thể dễ dàng kết hợp với quần jean, chân váy hoặc quần dài tạo nên phong cách cá nhân và độc đáo. Với cổ tròn và độ dài vừa phải, áo PCMISSIE phản ánh sự thanh lịch và tinh tế. Phù hợp cho mọi dịp từ đi làm đến dạo phố hay gặp gỡ bạn bè, áo dài tay PCMISSIE sẽ là một phần không thể thiếu trong tủ đồ của bạn.",
     "status": "new-collection"
   },
